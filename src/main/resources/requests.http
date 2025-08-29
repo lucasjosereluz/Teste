@@ -1,0 +1,62 @@
+## Variables
+@javaUrl = http://localhost:8000/api
+
+
+## Create movie
+POST {{javaUrl}}/movies
+Content-Type: application/json
+
+{
+    "title" : "Arrival",
+    "rate" : 16,
+    "categories" : ["SCI_FI"]
+}
+
+### Create movie
+POST {{javaUrl}}/movies
+Content-Type: application/json
+
+{
+    "title" : "Avenger",
+    "rate" : 10,
+    "categories" : ["ACTION"]
+}
+
+### Update Movie
+PUT {{javaUrl}}/movies/6d87a3cb-8e8f-4f6a-9a51-2ce042ad3e1e
+Content-Type: application/json
+
+{
+  "title" : "The Arrival",
+  "rate" : 16,
+  "categories" : ["SCI_FI", "DRAMA"]
+}
+
+### Get by rate greater than
+
+GET {{javaUrl}}/movies/greater/16
+Accept: application/json
+
+
+### Get by rate less than
+
+GET {{javaUrl}}/movies/less/12
+Accept: application/json
+
+### GET By category
+
+GET {{javaUrl}}/movies/ACTION
+Accept: application/json
+
+### GET by title
+GET {{javaUrl}}/movies/title/Arrival
+Accept: application/json
+
+### GET by category and rate greater than
+GET {{javaUrl}}/movies/categories-rate?categories=SCI_FI&rate=16
+Accept: application/json
+
+
+
+
+
